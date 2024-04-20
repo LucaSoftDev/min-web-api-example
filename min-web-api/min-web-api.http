@@ -1,0 +1,44 @@
+﻿@min-web-api_HostAddress = https://localhost:44396
+
+# Create a new todo item
+POST {{min-web-api_HostAddress}}/todo-items
+Content-Type: application/json
+
+{
+    "name": "Do the laundry",    
+    "isComplete": false,
+    "secret": "secret"
+}
+###
+
+# Get all todo items
+GET {{min-web-api_HostAddress}}/todo-items
+
+###
+
+# Update a todo item
+PUT {{min-web-api_HostAddress}}/todo-items/1
+Content-Type: application/json
+
+{    
+    "id": 1,
+    "name": "Do the laundry",   
+    "isCompleted": true
+}
+
+###
+
+# Get all completed todo items
+GET {{min-web-api_HostAddress}}/todo-items/complete
+
+###
+
+# Get todo item by id
+GET {{min-web-api_HostAddress}}/todo-items/1
+
+###
+
+# Delete a todo item
+DELETE {{min-web-api_HostAddress}}/todo-items/1
+
+###
